@@ -1,0 +1,14 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript,javascriptreact,typescriptreact",
+		"prefix": "rfc",
+		"body": [
+			"export function App$1() {",
+			"  return (",
+			"    <h1>Component$2</h1>",
+			"  )",
+			"}"
+		],
+		"description": "React Functional Component"
+	}
+}

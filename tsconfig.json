@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -15,6 +16,14 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "styled-components.d.ts",
+    "jest-styled-components.d.ts",
+    "**/*.ts",
+    "**/**/*.ts",
+    "**/*.tsx",
+    "**/**/*.tsx"
+  ],
   "exclude": ["node_modules"]
 }
