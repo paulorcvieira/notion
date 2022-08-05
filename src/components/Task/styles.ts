@@ -4,7 +4,7 @@ interface TaskProps {
   isComplete: boolean
 }
 
-export const Container =  styled.div<TaskProps>`
+export const Container = styled.div<TaskProps>`
   display: grid;
   width: 100%;
   grid-template-columns: 5.6rem 1fr 5.6rem;
@@ -39,7 +39,8 @@ export const Container =  styled.div<TaskProps>`
     cursor: pointer;
 
     span {
-      text-decoration: ${({ isComplete }) => isComplete ? 'line-through' : 'none'};
+      text-decoration: ${({ isComplete }) =>
+        isComplete ? 'line-through' : 'none'};
     }
   }
 
@@ -64,6 +65,5 @@ export const Container =  styled.div<TaskProps>`
         color: var(--red-500);
       }
     }
-
   }
 `

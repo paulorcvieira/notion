@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.article`
   background: var(--gray-800);
@@ -8,7 +8,7 @@ export const Container = styled.article`
   & + & {
     margin-top: 3.2rem;
   }
-`;
+`
 
 export const PostHeader = styled.header`
   display: flex;
@@ -19,7 +19,7 @@ export const PostHeader = styled.header`
     font-size: 1.4rem;
     color: var(--gray-400);
   }
-`;
+`
 
 export const Author = styled.div`
   display: flex;
@@ -40,7 +40,7 @@ export const Author = styled.div`
       line-height: 1.6;
     }
   }
-`;
+`
 
 export const Content = styled.div`
   line-height: 1.6;
@@ -65,7 +65,7 @@ export const Content = styled.div`
   a:hover {
     color: var(--green-300);
   }
-`;
+`
 
 export const FormComment = styled.form`
   width: 100%;
@@ -109,7 +109,7 @@ export const FormComment = styled.form`
     visibility: visible;
     max-height: none;
   }
-`;
+`
 
 export const FormButton = styled.button`
   position: relative;
@@ -132,7 +132,7 @@ export const FormButton = styled.button`
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     display: block;
     background: var(--white);
@@ -153,8 +153,8 @@ export const FormButton = styled.button`
     opacity: 1;
     transition: 0s;
   }
-`;
+`
 
 export const Comments = styled.div`
   margin-top: 3.2rem;
-`;
+`

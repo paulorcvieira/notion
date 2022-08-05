@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 // react-toastify
-import 'react-toastify/dist/ReactToastify.min.css';
+import 'react-toastify/dist/ReactToastify.min.css'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -113,6 +113,6 @@ const GlobalStyle = createGlobalStyle`
     .Toastify__toast--error {
       background: 'rgb(255, 102, 102)';
     }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

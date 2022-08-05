@@ -46,7 +46,7 @@ export const NewTask = styled.form`
     align-items: center;
     height: 5.4rem;
     width: 9rem;
-    margin-left: .8rem;
+    margin-left: 0.8rem;
 
     border: 0;
     border-radius: 8px;
@@ -106,7 +106,7 @@ export const TaskHeader = styled.header`
     margin-left: 0.8rem;
     background: var(--gray-600);
     border-radius: 15px;
-    padding: .3rem 1rem;
+    padding: 0.3rem 1rem;
   }
 `
 
@@ -130,7 +130,8 @@ export const TasksEmpty = styled.div`
     margin-bottom: 1.6rem;
   }
 
-  strong, span {
+  strong,
+  span {
     color: var(--gray-500);
   }
 `

@@ -10,9 +10,7 @@ type AppProviderProps = {
 export default function AppProvider({ children }: AppProviderProps) {
   return (
     <ThemeProvider>
-      <TasksProvider>
-        {children}
-      </TasksProvider>
+      <TasksProvider>{children}</TasksProvider>
     </ThemeProvider>
   )
 }

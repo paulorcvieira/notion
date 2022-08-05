@@ -1,9 +1,9 @@
-import { ImgHTMLAttributes } from "react";
+import { ImgHTMLAttributes } from 'react'
 
-import { AvatarImg } from './styles';
+import { AvatarImg } from './styles'
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
-  hasBorder?: boolean;
+  hasBorder?: boolean
   small?: boolean
 }
 
@@ -12,11 +12,5 @@ export function Avatar({
   small = false,
   ...props
 }: AvatarProps) {
-  return (
-    <AvatarImg
-      hasBorder={hasBorder}
-      small={small}
-      {...props}
-    />
-  );
+  return <AvatarImg hasBorder={hasBorder} small={small} {...props} />
 }

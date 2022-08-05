@@ -1,10 +1,10 @@
-import Link, { LinkProps } from 'next/link';
-import { useRouter } from 'next/router';
-import { cloneElement, ReactElement } from 'react';
+import Link, { LinkProps } from 'next/link'
+import { useRouter } from 'next/router'
+import { cloneElement, ReactElement } from 'react'
 
 interface ActiveLinkProps extends LinkProps {
-  children: ReactElement;
-  shouldMatchExactHref?: boolean;
+  children: ReactElement
+  shouldMatchExactHref?: boolean
 }
 
 export default function ActiveLink({
@@ -12,19 +12,19 @@ export default function ActiveLink({
   shouldMatchExactHref = false,
   ...rest
 }: ActiveLinkProps) {
-  const { asPath } = useRouter();
+  const { asPath } = useRouter()
 
-  let isActive = false;
+  let isActive = false
 
   if (shouldMatchExactHref && (asPath === rest.href || asPath === rest.as)) {
-    isActive = true;
+    isActive = true
   }
 
   if (
     !shouldMatchExactHref &&
     (asPath.startsWith(String(rest.href)) || asPath.startsWith(String(rest.as)))
   ) {
-    isActive = true;
+    isActive = true
   }
 
   return (
@@ -33,5 +33,5 @@ export default function ActiveLink({
         underline: isActive ? 'true' : 'false',
       })}
     </Link>
-  );
+  )
 }

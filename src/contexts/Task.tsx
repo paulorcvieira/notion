@@ -27,7 +27,7 @@ export function TasksProvider({ children }: TasksProviderProps) {
         tasksList,
         setTasksList,
         newTaskTitle,
-        setNewTaskTitle
+        setNewTaskTitle,
       }}
     >
       {children}

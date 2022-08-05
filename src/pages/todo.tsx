@@ -1,5 +1,12 @@
 import Head from 'next/head'
-import { ChangeEvent, FormEvent, InvalidEvent, useCallback, useEffect, useMemo } from 'react'
+import {
+  ChangeEvent,
+  FormEvent,
+  InvalidEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+} from 'react'
 import GithubCorner from 'react-github-corner'
 
 import { Header } from 'components/Header'
@@ -12,7 +19,9 @@ import {
   Content,
   NewTask,
   TaskHeader,
-  Tasks, TasksContent, TasksEmpty
+  Tasks,
+  TasksContent,
+  TasksEmpty,
 } from 'styles/todo-notion.styles'
 
 import { useTasks } from 'hooks/useTasks'
@@ -31,55 +40,68 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
     if (!tasksList.length) {
       setTasksList(tasks)
     }
-  }, [tasks])
+  }, [tasks, setTasksList, tasksList])
 
-  const handleCreateNewTask = useCallback((e: FormEvent) => {
-    e.preventDefault()
+  const handleCreateNewTask = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault()
 
-    const newTask: ITask = {
-      id: String(tasksList.length + 1),
-      title: newTaskTitle,
-      isComplete: false,
-      created_at: new Date()
-    }
+      const newTask: ITask = {
+        id: String(tasksList.length + 1),
+        title: newTaskTitle,
+        isComplete: false,
+        created_at: new Date(),
+      }
 
-    setTasksList((state: ITask[]) => [...state, newTask])
-    setNewTaskTitle('')
-  }, [newTaskTitle, setTasksList, setNewTaskTitle])
+      setTasksList((state: ITask[]) => [...state, newTask])
+      setNewTaskTitle('')
+    },
+    [newTaskTitle, setTasksList, setNewTaskTitle, tasksList],
+  )
 
   const handleNewTaskTitleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
       e.target.setCustomValidity('')
       setNewTaskTitle(e.target.value)
-  }, [setNewTaskTitle])
+    },
+    [setNewTaskTitle],
+  )
 
-  const deleteTask = useCallback((id: string) => {
-    const tasksFiltered = tasksList.filter(task => task.id !== id)
-    setTasksList([...tasksFiltered])
-  }, [tasksList, setTasksList])
+  const deleteTask = useCallback(
+    (id: string) => {
+      const tasksFiltered = tasksList.filter((task) => task.id !== id)
+      setTasksList([...tasksFiltered])
+    },
+    [tasksList, setTasksList],
+  )
 
-  const changeTaskStatus = useCallback((id: string) => {
-    const toggleTaskStatus = tasksList.map(task => {
-      if (task.id === id) {
-        Object.assign(task, { isComplete: !task.isComplete })
-      }
-      return task
-    })
+  const changeTaskStatus = useCallback(
+    (id: string) => {
+      const toggleTaskStatus = tasksList.map((task) => {
+        if (task.id === id) {
+          Object.assign(task, { isComplete: !task.isComplete })
+        }
+        return task
+      })
 
-    setTasksList([...toggleTaskStatus])
-  }, [tasksList, setTasksList])
+      setTasksList([...toggleTaskStatus])
+    },
+    [tasksList, setTasksList],
+  )
 
   const handleNewTaskInvalid = useCallback(
     (e: InvalidEvent<HTMLInputElement>) => {
       e.target.setCustomValidity('É obrigatório digitar um título!')
-  }, [])
+    },
+    [],
+  )
 
   const tasksCompleted = useMemo(() => {
-    return tasksList.filter(task => task.isComplete)
+    return tasksList.filter((task) => task.isComplete)
   }, [tasksList])
 
   const tasksNotCompleted = useMemo(() => {
-    return tasksList.filter(task => !task.isComplete)
+    return tasksList.filter((task) => !task.isComplete)
   }, [tasksList])
 
   const isNewTaskTitleEmpty = !newTaskTitle.length
@@ -97,7 +119,6 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
       <Header title="ToDo" color="blue" logo="todo" />
 
       <Container>
-
         <Content>
           <NewTask onSubmit={handleCreateNewTask}>
             <input
@@ -118,13 +139,20 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
 
           <Tasks>
             <TaskHeader>
-              <div>Tarefas criadas <span>{tasksList.length}</span></div>
-              <div>Concluídas <span>{tasksCompleted.length} de {tasksList.length}</span></div>
+              <div>
+                Tarefas criadas <span>{tasksList.length}</span>
+              </div>
+              <div>
+                Concluídas{' '}
+                <span>
+                  {tasksCompleted.length} de {tasksList.length}
+                </span>
+              </div>
             </TaskHeader>
 
-            {!!tasksList.length ? (
+            {tasksList.length ? (
               <TasksContent>
-                {tasksNotCompleted.map(task => (
+                {tasksNotCompleted.map((task) => (
                   <Task
                     key={task.id}
                     task={task}
@@ -132,7 +160,7 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
                     onDeleteTask={deleteTask}
                   />
                 ))}
-                {tasksCompleted.map(task => (
+                {tasksCompleted.map((task) => (
                   <Task
                     key={task.id}
                     task={task}
@@ -148,8 +176,6 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
                 <span>Crie e organize seus itens a fazer</span>
               </TasksEmpty>
             )}
-
-
           </Tasks>
         </Content>
 
@@ -171,7 +197,7 @@ export const getStaticProps = async () => {
   return {
     revalidate: 60 * 60 * 24,
     props: {
-      tasks
-    }
+      tasks,
+    },
   }
 }

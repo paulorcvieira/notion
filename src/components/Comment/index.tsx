@@ -14,7 +14,7 @@ import {
   Container,
   Content,
   Header,
-  HeaderContent
+  HeaderContent,
 } from './styles'
 
 interface CommentProps {
@@ -31,7 +31,7 @@ export function Comment({
   const publishedAtFormatted = format(
     new Date(data.created_at),
     "d 'de' LLLL 'às' HH:mm'h'",
-    { locale: ptBR }
+    { locale: ptBR },
   )
 
   const publishedAtRelativeToNow = formatDistanceToNow(

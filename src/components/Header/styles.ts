@@ -1,13 +1,13 @@
-import styled, { DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components'
 
 interface ButtonProps {
-  underline?: string;
+  underline?: string
 }
 
-export type ColorVariant = 'green' | 'blue' | 'purple';
+export type ColorVariant = 'green' | 'blue' | 'purple'
 
 interface ColorProps {
-  color: ColorVariant;
+  color: ColorVariant
 }
 
 const logoColor = {
@@ -41,7 +41,8 @@ export const Logo = styled.div<ColorProps>`
     height: 4.6rem;
   }
 
-  span, strong {
+  span,
+  strong {
     line-height: 4.6rem;
     font-size: 2.6rem;
   }
@@ -87,4 +88,4 @@ export const Link = styled.span<ButtonProps>`
   &:hover:after {
     width: 100%;
   }
-`;
+`

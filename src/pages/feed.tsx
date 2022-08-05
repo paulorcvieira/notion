@@ -1,27 +1,27 @@
-import Head from 'next/head';
-import GithubCorner from 'react-github-corner';
+import Head from 'next/head'
+import GithubCorner from 'react-github-corner'
 
-import { Header } from 'components/Header';
-import { Post } from 'components/Post';
-import { Sidebar } from 'components/Sidebar';
+import { Header } from 'components/Header'
+import { Post } from 'components/Post'
+import { Sidebar } from 'components/Sidebar'
 
-import { IPost } from 'interfaces/IPosts';
+import { IPost } from 'interfaces/IPosts'
 
-import { useEffect, useState } from 'react';
-import { Container } from 'styles/feed-notion.styles';
+import { useEffect, useState } from 'react'
+import { Container } from 'styles/feed-notion.styles'
 
 interface FeedNotionProps {
   posts: IPost[]
 }
 
 export default function FeedNotion({ posts }: FeedNotionProps) {
-  const [postsList, setPostsList] = useState<IPost[]>([...posts]);
+  const [postsList, setPostsList] = useState<IPost[]>([...posts])
 
   useEffect(() => {
     if (!postsList.length) {
       setPostsList(posts)
     }
-  }, [])
+  }, [posts, postsList])
 
   return (
     <>
@@ -38,11 +38,8 @@ export default function FeedNotion({ posts }: FeedNotionProps) {
       <Container>
         <Sidebar />
         <main>
-          {postsList.map(post => (
-            <Post
-              key={post.id}
-              post={post}
-            />
+          {postsList.map((post) => (
+            <Post key={post.id} post={post} />
           ))}
         </main>
 
@@ -64,7 +61,7 @@ export const getStaticProps = async () => {
   return {
     revalidate: 60 * 60 * 24,
     props: {
-      posts
-    }
+      posts,
+    },
   }
 }

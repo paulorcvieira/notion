@@ -88,14 +88,14 @@ export const Clap = styled.footer`
   }
 
   svg {
-    margin-right: .8rem;
+    margin-right: 0.8rem;
   }
 
   span {
     font-size: 1.4rem;
 
     &::before {
-      content: "\u2219";
+      content: '\u2219';
       padding: 0 0.5rem;
     }
   }

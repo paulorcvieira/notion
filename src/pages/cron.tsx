@@ -3,14 +3,9 @@ import GithubCorner from 'react-github-corner'
 
 import { Header } from 'components/Header'
 
-import {
-  Container,
-  Content
-} from 'styles/cron-notion.styles'
-
+import { Container, Content } from 'styles/cron-notion.styles'
 
 export default function CronNotion() {
-
   return (
     <>
       <Head>
@@ -24,10 +19,7 @@ export default function CronNotion() {
       <Header title="Cron" color="purple" logo="cron" />
 
       <Container>
-
-        <Content>
-          Cron
-        </Content>
+        <Content>Cron</Content>
 
         <GithubCorner
           href="https://github.com/paulorcvieira"
@@ -47,7 +39,7 @@ export const getStaticProps = async () => {
   return {
     revalidate: 60 * 60 * 24,
     props: {
-      crons
-    }
+      crons,
+    },
   }
 }
