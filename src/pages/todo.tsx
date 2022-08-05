@@ -21,7 +21,7 @@ import { ITask } from 'interfaces/ITasks'
 const notTasksIcon = 'assets/not-tasks-icon.svg'
 
 interface ToDoNotionProps {
-  tasks: ITask[]
+  tasks: string
 }
 
 export default function ToDoNotion({ tasks }: ToDoNotionProps) {
@@ -29,7 +29,7 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
 
   useEffect(() => {
     if (!tasksList.length) {
-      setTasksList(tasks)
+      setTasksList(JSON.parse(tasks))
     }
   }, [tasks])
 
@@ -165,13 +165,28 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3000/api/tasks')
-  const tasks = await response.json()
+  // const response = await fetch('http://localhost:3000/api/tasks')
+  // const tasks = await response.json()
+
+  const tasks = [
+    {
+      id: '1-task',
+      title: 'Atualizar banco de dados.',
+      isComplete: false,
+      created_at: new Date()
+    },
+    {
+      id: '2-task',
+      title: 'Estudar React.',
+      isComplete: true,
+      created_at: new Date()
+    },
+  ]
 
   return {
     revalidate: 60 * 60 * 24,
     props: {
-      tasks
+      tasks: JSON.stringify(tasks)
     }
   }
 }
