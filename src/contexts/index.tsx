@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
+
 import { TasksProvider } from './Task'
+import { ThemeProvider } from './Theme'
 
 type AppProviderProps = {
   children: ReactNode
@@ -7,8 +9,10 @@ type AppProviderProps = {
 
 export default function AppProvider({ children }: AppProviderProps) {
   return (
-    <TasksProvider>
-      {children}
-    </TasksProvider>
+    <ThemeProvider>
+      <TasksProvider>
+        {children}
+      </TasksProvider>
+    </ThemeProvider>
   )
 }

@@ -18,9 +18,9 @@ const GlobalStyle = createGlobalStyle`
       --white: #ffffff;
 
       --gray-100: #e1e1e6;
-      --gray-200: #808080;
       --gray-300: #c4c4cc;
       --gray-400: #8d8d99;
+      --gray-500: #808080;
       --gray-600: #323238;
       --gray-700: #29292e;
       --gray-800: #202024;
@@ -63,16 +63,19 @@ const GlobalStyle = createGlobalStyle`
     }
 
     html {
-      font-family: "Roboto", sans-serif;
       font-size: 62.5%;
       scroll-behavior: smooth;
     }
 
     body {
-      background-color: var(--gray-900);
-      color: var(--white);
-      font-size: 1.6rem;
+      background-color: ${({ theme }) => theme.colors.gray[900]};
+      color: ${({ theme }) => theme.colors.white};
+    }
+
+    body, input, textarea, button {
+      font-family: "Roboto", sans-serif;
       font-weight: 400;
+      font-size: 1.6rem;
     }
 
     h1,
