@@ -14,7 +14,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         </Head>
 
         <NextNprogress
-          color="#2ecc71"
+          color="#00875f"
           startPosition={0.3}
           stopDelayMs={200}
           height={3}

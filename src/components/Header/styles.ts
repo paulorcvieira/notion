@@ -4,7 +4,11 @@ interface ButtonProps {
   underline?: string;
 }
 
-export const Container = styled.header`
+interface ColorProps {
+  color?: 'green' | 'blue';
+}
+
+export const Container = styled.header<ColorProps>`
   background: var(--gray-800);
   display: flex;
   justify-content: space-around;
@@ -15,10 +19,10 @@ export const Container = styled.header`
   top: 0;
   min-width: 100%;
 
-  box-shadow: 1px 1px 1px var(--green-500);
+  box-shadow: 1px 1px 1px ${({ color }) => color === 'green' ? 'var(--green-500)' : 'var(--blue-700)'};
 `
 
-export const Logo = styled.div`
+export const Logo = styled.div<ColorProps>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +42,7 @@ export const Logo = styled.div`
   }
 
   strong > span {
-    color: var(--green-500);
+    color: ${({ color }) => color === 'green' ? 'var(--green-500)' : 'var(--blue-700)'};
   }
 `
 
