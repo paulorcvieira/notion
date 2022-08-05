@@ -28,7 +28,7 @@ export const NewTask = styled.form`
     border: 0;
     border-radius: 8px;
     background: var(--gray-600);
-    color: var(--gray-200);
+    color: var(--gray-500);
     outline: transparent;
     font-size: 1.6rem;
     flex: 1;
@@ -131,6 +131,6 @@ export const TasksEmpty = styled.div`
   }
 
   strong, span {
-    color: var(--gray-200);
+    color: var(--gray-500);
   }
 `

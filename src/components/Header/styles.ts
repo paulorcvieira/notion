@@ -1,11 +1,19 @@
-import styled from 'styled-components';
+import styled, { DefaultTheme } from 'styled-components';
 
 interface ButtonProps {
   underline?: string;
 }
 
+export type ColorVariant = 'green' | 'blue' | 'purple';
+
 interface ColorProps {
-  color?: 'green' | 'blue';
+  color: ColorVariant;
+}
+
+const logoColor = {
+  green: (theme: DefaultTheme) => theme.colors.green[500],
+  blue: (theme: DefaultTheme) => theme.colors.blue[700],
+  purple: (theme: DefaultTheme) => theme.colors.purple[500],
 }
 
 export const Container = styled.header<ColorProps>`
@@ -19,7 +27,7 @@ export const Container = styled.header<ColorProps>`
   top: 0;
   min-width: 100%;
 
-  box-shadow: 1px 1px 1px ${({ color }) => color === 'green' ? 'var(--green-500)' : 'var(--blue-700)'};
+  box-shadow: 1px 1px 1px ${({ theme, color }) => logoColor[color](theme)};
 `
 
 export const Logo = styled.div<ColorProps>`
@@ -29,6 +37,7 @@ export const Logo = styled.div<ColorProps>`
   letter-spacing: 2px;
 
   img {
+    width: 4.6rem;
     height: 4.6rem;
   }
 
@@ -42,7 +51,7 @@ export const Logo = styled.div<ColorProps>`
   }
 
   strong > span {
-    color: ${({ color }) => color === 'green' ? 'var(--green-500)' : 'var(--blue-700)'};
+    color: ${({ theme, color }) => logoColor[color](theme)};
   }
 `
 
