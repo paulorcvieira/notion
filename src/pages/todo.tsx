@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import {
   ChangeEvent,
   FormEvent,
@@ -9,7 +8,7 @@ import {
 } from 'react'
 import GithubCorner from 'react-github-corner'
 
-import { Header } from 'components/Header'
+import DefaultLayout from 'components/layouts/DefaultLayout'
 import Task from 'components/Task'
 
 import { PlusCircle } from 'phosphor-react'
@@ -22,7 +21,7 @@ import {
   Tasks,
   TasksContent,
   TasksEmpty,
-} from 'styles/todo-notion.styles'
+} from 'styles/todo.styles'
 
 import { useTasks } from 'hooks/useTasks'
 import { ITask } from 'interfaces/ITasks'
@@ -107,17 +106,15 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
   const isNewTaskTitleEmpty = !newTaskTitle.length
 
   return (
-    <>
-      <Head>
-        <link rel="shortcut icon" href="/assets/todo-logo.svg" />
-        <link rel="apple-touch-icon" href="/assets/todo-logo.svg" />
-        <title>ToDoNotion</title>
-        <meta name="description" content="Your next generation feed" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header title="ToDo" color="blue" logo="todo" />
-
+    <DefaultLayout
+      title="ToDoNotion"
+      description="Your next generation Todo"
+      logoFileName="todo-logo.svg"
+      headerTitle="ToDo"
+      headerColor="blue"
+      headerLogo="todo"
+      headerLogoAlt="Logo ToDoNotion"
+    >
       <Container>
         <Content>
           <NewTask onSubmit={handleCreateNewTask}>
@@ -186,7 +183,7 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
           size={86}
         />
       </Container>
-    </>
+    </DefaultLayout>
   )
 }
 
