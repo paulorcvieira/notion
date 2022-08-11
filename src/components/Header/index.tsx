@@ -3,29 +3,33 @@ import { ColorVariant, Container, Link, Logo, Navbar } from './styles'
 import ActiveLink from 'components/ActiveLink'
 
 import cronLogo from '../../../public/assets/cron-logo.svg'
-import feedLogo from '../../../public/assets/feed-logo-48.svg'
+import feedLogo from '../../../public/assets/feed-logo.svg'
 import todoLogo from '../../../public/assets/todo-logo.svg'
+
+export type LogoVariant = 'feed' | 'todo' | 'cron'
 
 interface HeaderProps {
   title: string
   color?: ColorVariant
-  logo?: 'feed' | 'todo' | 'cron'
+  logo?: LogoVariant
+  logoAlt?: string
 }
 
 export function Header({
   title = 'Home',
   color = 'green',
   logo = 'feed',
+  logoAlt = 'Logo',
 }: HeaderProps) {
   return (
     <Container color={color}>
       <Logo color={color}>
         {logo === 'feed' ? (
-          <img src={feedLogo} alt="FeedLogo" />
+          <img src={feedLogo} alt={logoAlt} />
         ) : logo === 'todo' ? (
-          <img src={todoLogo} alt="FeedLogo" />
+          <img src={todoLogo} alt={logoAlt} />
         ) : (
-          <img src={cronLogo} alt="FeedLogo" />
+          <img src={cronLogo} alt={logoAlt} />
         )}
         <span>{title}</span>
         <strong>
