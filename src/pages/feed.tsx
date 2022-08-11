@@ -1,14 +1,13 @@
-import Head from 'next/head'
+import { useEffect, useState } from 'react'
 import GithubCorner from 'react-github-corner'
 
-import { Header } from 'components/Header'
+import DefaultLayout from 'components/layouts/DefaultLayout'
 import { Post } from 'components/Post'
 import { Sidebar } from 'components/Sidebar'
 
 import { IPost } from 'interfaces/IPosts'
 
-import { useEffect, useState } from 'react'
-import { Container } from 'styles/feed-notion.styles'
+import { Container } from 'styles/feed.styles'
 
 interface FeedNotionProps {
   posts: IPost[]
@@ -24,17 +23,15 @@ export default function FeedNotion({ posts }: FeedNotionProps) {
   }, [posts, postsList])
 
   return (
-    <>
-      <Head>
-        <link rel="shortcut icon" href="/assets/feed-logo-48.svg" />
-        <link rel="apple-touch-icon" href="/assets/feed-logo-48.svg" />
-        <title>FeedNotion</title>
-        <meta name="description" content="Your next generation feed" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Header title="Feed" />
-
+    <DefaultLayout
+      title="FeedNotion"
+      description="Your next generation Cron"
+      logoFileName="feed-logo.svg"
+      headerTitle="Feed"
+      headerColor="green"
+      headerLogo="feed"
+      headerLogoAlt="Logo FeedNotion"
+    >
       <Container>
         <Sidebar />
         <main>
@@ -50,7 +47,7 @@ export default function FeedNotion({ posts }: FeedNotionProps) {
           size={86}
         />
       </Container>
-    </>
+    </DefaultLayout>
   )
 }
 
