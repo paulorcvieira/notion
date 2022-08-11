@@ -3,7 +3,7 @@ import { useFormContext } from 'react-hook-form'
 
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 
-export function NewCycleForm() {
+export default function NewCycleForm() {
   const { activeCycle, cycles } = useCron()
 
   const formContext = useFormContext()
@@ -27,7 +27,7 @@ export function NewCycleForm() {
       />
 
       <datalist id="task-suggestions">
-        {!!cycles &&
+        {!!cycles.length &&
           cycles.map((cycle) => <option key={cycle.id} value={cycle.task} />)}
       </datalist>
 

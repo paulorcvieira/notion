@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
+import dynamic from 'next/dynamic'
 import { HandPalm, Play } from 'phosphor-react'
 import { useCallback } from 'react'
 import GithubCorner from 'react-github-corner'
@@ -8,7 +9,6 @@ import * as zod from 'zod'
 import { Countdown, CronHeader } from 'components/cron'
 import DefaultLayout from 'components/layouts/DefaultLayout'
 
-import { NewCycleForm } from 'components/cron/NewCycleForm'
 import {
   Container,
   Content,
@@ -19,6 +19,10 @@ import {
 } from 'styles/cron.styles'
 
 import { useCron } from 'hooks/useCron'
+
+const NewCycleForm = dynamic(() => import('components/cron/NewCycleForm'), {
+  ssr: false,
+})
 
 const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, '* Informe o título da tarefa!').max(50),
