@@ -22,6 +22,7 @@ export const Container = styled.header<ColorProps>`
   justify-content: space-around;
   align-items: center;
   padding: 2rem 0;
+  z-index: 1;
 
   position: fixed;
   top: 0;
