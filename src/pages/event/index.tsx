@@ -1,4 +1,4 @@
-import Subscribe from 'components/Event/Subscribe'
+import Subscribe from 'components/modules/Event/Subscribe'
 
 export default function Event() {
   return <Subscribe />

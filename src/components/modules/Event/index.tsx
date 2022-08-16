@@ -3,7 +3,7 @@ import { lazy, Suspense, useEffect, useMemo } from 'react'
 
 import { Container, Content } from './styles'
 
-import Spinner from 'components/Spinner'
+import Spinner from 'components/communs/Spinner'
 import { useGetLessonsQuery } from 'graphql/generated'
 
 const Sidebar = lazy(() => import('./Sidebar'))

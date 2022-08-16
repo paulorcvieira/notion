@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic'
 import GithubCorner from 'react-github-corner'
 
-import DefaultLayout from 'components/layouts/DefaultLayout'
+import DefaultLayout from 'components/communs/layouts/DefaultLayout'
 
-import { Container } from 'styles/event.styles'
+import { Container } from './styles'
 
-const Event = dynamic(() => import('components/Event'), {
+const Event = dynamic(() => import('components/modules/Event'), {
   ssr: false,
 })
 

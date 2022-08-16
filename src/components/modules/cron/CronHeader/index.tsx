@@ -1,4 +1,4 @@
-import ActiveLink from 'components/ActiveLink'
+import ActiveLink from 'components/communs/ActiveLink'
 
 import { Scroll, Timer } from 'styles/icons'
 

@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { Bounce, toast } from 'react-toastify'
 import * as zod from 'zod'
 
-import DefaultLayout from 'components/layouts/DefaultLayout'
+import DefaultLayout from 'components/communs/layouts/DefaultLayout'
 
 import { CalendarCheck } from 'styles/icons'
 

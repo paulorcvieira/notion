@@ -1,5 +1,6 @@
-import { useCron } from 'hooks/useCron'
 import { useFormContext } from 'react-hook-form'
+
+import { useCron } from 'hooks/useCron'
 
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 
