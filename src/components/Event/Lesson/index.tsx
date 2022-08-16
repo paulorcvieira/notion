@@ -2,7 +2,7 @@ import { format, isPast } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
 import { useRouter } from 'next/router'
 
-import { CheckCircle, Lock } from 'phosphor-react'
+import { CheckCircle, Lock } from 'styles/icons'
 
 import {
   Box,

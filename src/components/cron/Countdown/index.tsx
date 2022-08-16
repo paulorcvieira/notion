@@ -1,6 +1,8 @@
 import { differenceInSeconds } from 'date-fns'
-import { useCron } from 'hooks/useCron'
 import { useEffect, useMemo } from 'react'
+
+import { useCron } from 'hooks/useCron'
+
 import { Container, Separator } from './styles'
 
 export function Countdown() {

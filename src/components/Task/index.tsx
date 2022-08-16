@@ -1,4 +1,4 @@
-import { Trash } from 'phosphor-react'
+import { Trash } from 'styles/icons'
 
 import { ITask } from 'interfaces/ITasks'
 

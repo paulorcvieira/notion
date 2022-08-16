@@ -1,12 +1,14 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import DefaultLayout from 'components/layouts/DefaultLayout'
 import { useCreateSubscriberMutation } from 'graphql/generated'
 import { useRouter } from 'next/router'
-import { CalendarCheck } from 'phosphor-react'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 import { Bounce, toast } from 'react-toastify'
 import * as zod from 'zod'
+
+import DefaultLayout from 'components/layouts/DefaultLayout'
+
+import { CalendarCheck } from 'styles/icons'
 
 import {
   Button,

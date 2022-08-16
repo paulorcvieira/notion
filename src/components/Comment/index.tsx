@@ -3,7 +3,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 
 import { IComment } from 'interfaces/IPosts'
 
-import { HandsClapping, Trash } from 'phosphor-react'
+import { HandsClapping, Trash } from 'styles/icons'
 
 import { Avatar } from '../Avatar'
 

@@ -1,6 +1,6 @@
-import { Scroll, Timer } from 'phosphor-react'
-
 import ActiveLink from 'components/ActiveLink'
+
+import { Scroll, Timer } from 'styles/icons'
 
 import { Container, Link } from './styles'
 

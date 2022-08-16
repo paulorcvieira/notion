@@ -11,7 +11,7 @@ import GithubCorner from 'react-github-corner'
 import DefaultLayout from 'components/layouts/DefaultLayout'
 import Task from 'components/Task'
 
-import { PlusCircle } from 'phosphor-react'
+import { PlusCircle } from 'styles/icons'
 
 import {
   Container,

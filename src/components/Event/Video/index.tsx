@@ -5,7 +5,7 @@ import {
   DiscordLogo,
   FileArrowDown,
   Lightning,
-} from 'phosphor-react'
+} from 'styles/icons'
 
 import {
   Avatar,

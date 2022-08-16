@@ -1,10 +1,11 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import dynamic from 'next/dynamic'
-import { HandPalm, Play } from 'phosphor-react'
 import { useCallback } from 'react'
 import GithubCorner from 'react-github-corner'
 import { FormProvider, useForm } from 'react-hook-form'
 import * as zod from 'zod'
+
+import { HandPalm, Play } from 'styles/icons'
 
 import { Countdown, CronHeader } from 'components/cron'
 import DefaultLayout from 'components/layouts/DefaultLayout'

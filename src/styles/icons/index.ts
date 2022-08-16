@@ -1,0 +1,17 @@
+export {
+  CalendarCheck,
+  CaretRight,
+  CheckCircle,
+  DiscordLogo,
+  FileArrowDown,
+  HandPalm,
+  HandsClapping,
+  Lightning,
+  Lock,
+  PencilLine,
+  Play,
+  PlusCircle,
+  Scroll,
+  Timer,
+  Trash,
+} from 'phosphor-react'
