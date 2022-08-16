@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { InputProps } from 'styles/cron.styles'
+import { InputProps } from '../styles'
 
 export const FormContainer = styled.div`
   width: 100%;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.article`
-  background: var(--gray-800);
+  background: ${({ theme }) => theme.colors.gray[800]};
   border-radius: 8px;
   padding: 4rem;
 
@@ -17,7 +17,7 @@ export const PostHeader = styled.header`
 
   time {
     font-size: 1.4rem;
-    color: var(--gray-400);
+    color: ${({ theme }) => theme.colors.gray[400]};
   }
 `
 
@@ -29,14 +29,14 @@ export const Author = styled.div`
   div {
     strong {
       display: block;
-      color: var(--gray-100);
+      color: ${({ theme }) => theme.colors.gray[100]};
       line-height: 1.6;
     }
 
     span {
       display: block;
       font-size: 1.4rem;
-      color: var(--gray-400);
+      color: ${({ theme }) => theme.colors.gray[400]};
       line-height: 1.6;
     }
   }
@@ -44,7 +44,7 @@ export const Author = styled.div`
 
 export const Content = styled.div`
   line-height: 1.6;
-  color: var(--gray-300);
+  color: ${({ theme }) => theme.colors.gray[300]};
   margin-top: 2.4rem;
 
   p {
@@ -58,12 +58,12 @@ export const Content = styled.div`
 
   a {
     font-weight: bold;
-    color: var(--green-500);
+    color: ${({ theme }) => theme.colors.green[500]};
     text-decoration: none;
   }
 
   a:hover {
-    color: var(--green-300);
+    color: ${({ theme }) => theme.colors.green[300]};
   }
 `
 
@@ -71,28 +71,28 @@ export const FormComment = styled.form`
   width: 100%;
   margin-top: 2.4rem;
   padding-top: 2.4rem;
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid ${({ theme }) => theme.colors.gray[600]};
 
   > strong {
     line-height: 1.6;
-    color: var(--gray-100);
+    color: ${({ theme }) => theme.colors.gray[100]};
   }
 
   textarea {
     width: 100%;
-    background: var(--gray-900);
+    background: ${({ theme }) => theme.colors.gray[900]};
     border: 0;
     resize: none;
     height: 9.6rem;
     padding: 1.6rem;
     border-radius: 0.4rem;
-    color: var(--gray-100);
+    color: ${({ theme }) => theme.colors.gray[100]};
     line-height: 1.4;
     margin-top: 1.6rem;
   }
 
   textarea:focus {
-    box-shadow: 1px 1px 1px var(--green-500);
+    box-shadow: 1px 1px 1px ${({ theme }) => theme.colors.green[500]};
   }
 
   footer {
@@ -117,8 +117,8 @@ export const FormButton = styled.button`
   margin-top: 1.6rem;
   border-radius: 8px;
   border: 0;
-  background: var(--green-500);
-  color: var(--white);
+  background: ${({ theme }) => theme.colors.green[500]};
+  color: ${({ theme }) => theme.colors.white};
   font-weight: bold;
   cursor: pointer;
 
@@ -128,15 +128,15 @@ export const FormButton = styled.button`
   overflow: hidden;
 
   &:not(:disabled):hover {
-    background: var(--green-300);
+    background: ${({ theme }) => theme.colors.green[300]};
   }
 
   &:after {
     content: '';
     position: absolute;
     display: block;
-    background: var(--white);
-    color: var(--gray-900);
+    background: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.gray[900]};
     border-radius: 100%;
     padding-top: 300%;
     padding-left: 200%;

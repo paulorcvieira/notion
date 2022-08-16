@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.aside`
-  background-color: var(--gray-800);
+  background-color: ${({ theme }) => theme.colors.gray[800]};
   border-radius: 8px;
   overflow: hidden;
 `
@@ -22,27 +22,27 @@ export const Profile = styled.div`
   strong {
     font-size: 1.9rem;
     margin-top: 1.6rem;
-    color: var(--gray-100);
+    color: ${({ theme }) => theme.colors.gray[100]};
     line-height: 1.6;
   }
 
   span {
     font-size: 1.4rem;
-    color: var(--gray-400);
+    color: ${({ theme }) => theme.colors.gray[400]};
     line-height: 1.6;
   }
 `
 
 export const Footer = styled.footer`
-  border-top: 0.1rem solid var(--gray-600);
+  border-top: 0.1rem solid ${({ theme }) => theme.colors.gray[600]};
   margin-top: 2rem;
   padding: 2.4rem 3.2rem 3.2rem;
 
   a {
     width: 100%;
     background: transparent;
-    color: var(--green-500);
-    border: 0.1px solid var(--green-500);
+    color: ${({ theme }) => theme.colors.green[500]};
+    border: 0.1px solid ${({ theme }) => theme.colors.green[500]};
     border-radius: 8px;
     height: 5rem;
     padding: 0 2rem;
@@ -59,7 +59,7 @@ export const Footer = styled.footer`
   }
 
   a:hover {
-    background: var(--green-500);
-    color: var(--white);
+    background: ${({ theme }) => theme.colors.green[500]};
+    color: ${({ theme }) => theme.colors.white};
   }
 `

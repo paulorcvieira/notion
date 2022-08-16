@@ -27,16 +27,16 @@ export const NewTask = styled.form`
     height: 5.4rem;
     border: 0;
     border-radius: 8px;
-    background: var(--gray-600);
-    color: var(--gray-500);
+    background: ${({ theme }) => theme.colors.gray[600]};
+    color: ${({ theme }) => theme.colors.gray[500]};
     outline: transparent;
     font-size: 1.6rem;
     flex: 1;
     padding: 1.6rem;
 
     &:focus {
-      box-shadow: 0 0 0 2px var(--blue-700);
-      color: var(--white);
+      box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blue[700]};
+      color: ${({ theme }) => theme.colors.white};
     }
   }
 
@@ -50,9 +50,9 @@ export const NewTask = styled.form`
 
     border: 0;
     border-radius: 8px;
-    background: var(--blue-700);
+    background: ${({ theme }) => theme.colors.blue[700]};
 
-    color: var(--white);
+    color: ${({ theme }) => theme.colors.white};
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 16;
@@ -65,7 +65,7 @@ export const NewTask = styled.form`
     }
 
     &:focus {
-      box-shadow: 0 0 0 2px var(--blue-700);
+      box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blue[700]};
     }
 
     transition: background 0.2s;
@@ -74,7 +74,7 @@ export const NewTask = styled.form`
     overflow: hidden;
 
     &:not(:disabled):hover {
-      background: var(--blue-300);
+      background: ${({ theme }) => theme.colors.blue[300]};
     }
 
     &:disabled {
@@ -104,7 +104,7 @@ export const TaskHeader = styled.header`
 
   span {
     margin-left: 0.8rem;
-    background: var(--gray-600);
+    background: ${({ theme }) => theme.colors.gray[400]};
     border-radius: 15px;
     padding: 0.3rem 1rem;
   }
@@ -124,7 +124,7 @@ export const TasksEmpty = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  border-top: 1px solid var(--gray-600);
+  border-top: 1px solid ${({ theme }) => theme.colors.gray[400]};
 
   img {
     margin-bottom: 1.6rem;
@@ -132,6 +132,6 @@ export const TasksEmpty = styled.div`
 
   strong,
   span {
-    color: var(--gray-500);
+    color: ${({ theme }) => theme.colors.gray[400]};
   }
 `

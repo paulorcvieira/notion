@@ -10,7 +10,7 @@ export const Container = styled.div<TaskProps>`
   grid-template-columns: 5.6rem 1fr 5.6rem;
   gap: 1.2rem;
   padding: 1.6rem;
-  background: var(--gray-600);
+  background: ${({ theme }) => theme.colors.gray[600]};
   border-radius: 8px;
 
   & + div {
@@ -30,7 +30,7 @@ export const Container = styled.div<TaskProps>`
       border-radius: 4px;
 
       &:focus {
-        box-shadow: 0 0 0 2px var(--blue-700);
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blue[700]};
       }
     }
   }
@@ -52,17 +52,17 @@ export const Container = styled.div<TaskProps>`
     button {
       background: transparent;
       border: 0;
-      color: var(--gray-400);
+      color: ${({ theme }) => theme.colors.gray[400]};
       cursor: pointer;
       line-height: 0;
       border-radius: 4px;
 
       &:focus {
-        box-shadow: 0 0 0 2px var(--blue-700);
+        box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.blue[700]};
       }
 
       &:hover {
-        color: var(--red-500);
+        color: ${({ theme }) => theme.colors.red[500]};
       }
     }
   }

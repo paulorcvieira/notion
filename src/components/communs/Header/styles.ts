@@ -17,7 +17,7 @@ const logoColor = {
 }
 
 export const Container = styled.header<ColorProps>`
-  background: var(--gray-800);
+  background: ${({ theme }) => theme.colors.gray[800]};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -69,7 +69,7 @@ export const Link = styled.span<ButtonProps>`
   text-decoration: none;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
-  color: var(--white);
+  color: ${({ theme }) => theme.colors.white};
 
   margin-inline: 2rem;
 
@@ -78,7 +78,7 @@ export const Link = styled.span<ButtonProps>`
   &:after {
     content: '';
     position: absolute;
-    background: var(--white);
+    background: ${({ theme }) => theme.colors.white};
     height: 2px;
     width: ${({ underline }) => (underline === 'true' ? '100%' : 0)};
     left: 0;

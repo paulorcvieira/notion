@@ -15,7 +15,7 @@ export const Box = styled.div`
 `
 
 export const Content = styled.div`
-  background: var(--gray-700);
+  background: ${({ theme }) => theme.colors.gray[800]};
   border-radius: 8px;
   padding: 1.6rem;
 `
@@ -28,14 +28,14 @@ export const Header = styled.header`
   button {
     background: transparent;
     border: 0;
-    color: var(--gray-400);
+    color: ${({ theme }) => theme.colors.gray[400]};
     cursor: pointer;
     line-height: 0;
     border-radius: 4px;
   }
 
   button:hover {
-    color: var(--red-500);
+    color: ${({ theme }) => theme.colors.red[500]};
   }
 `
 
@@ -50,14 +50,14 @@ export const HeaderContent = styled.div`
     display: block;
     font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--gray-400);
+    color: ${({ theme }) => theme.colors.gray[400]};
   }
 `
 
 export const CommentContent = styled.div`
   p {
     margin-top: 1.6rem;
-    color: var(--gray-300);
+    color: ${({ theme }) => theme.colors.gray[300]};
   }
 `
 
@@ -69,12 +69,12 @@ export const Clap = styled.footer`
   line-height: 1.4;
   font-size: 1.4rem;
 
-  color: var(--yellow-600);
+  color: ${({ theme }) => theme.colors.yellow[600]};
 
   button {
     background: transparent;
     border: 0;
-    color: var(--yellow-600);
+    color: ${({ theme }) => theme.colors.yellow[600]};
     cursor: pointer;
 
     display: flex;
@@ -84,7 +84,7 @@ export const Clap = styled.footer`
   }
 
   button:hover {
-    color: var(--yellow-500);
+    color: ${({ theme }) => theme.colors.yellow[500]};
   }
 
   svg {

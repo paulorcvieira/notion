@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { ReactNode } from 'react'
 
-import { Header, LogoVariant } from 'components/Header'
-import { ColorVariant } from 'components/Header/styles'
+import { Header, LogoVariant } from 'components/communs/Header'
+import { ColorVariant } from 'components/communs/Header/styles'
 
 import { Container } from './styles'
 
