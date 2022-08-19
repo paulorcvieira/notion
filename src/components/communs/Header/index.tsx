@@ -1,11 +1,11 @@
 import { ColorVariant, Container, Link, Logo, Navbar } from './styles'
 
-import ActiveLink from 'components/ActiveLink'
+import ActiveLink from '../ActiveLink'
 
-import cronLogo from '../../../public/assets/cron-logo.svg'
-import eventLogo from '../../../public/assets/event-logo.svg'
-import feedLogo from '../../../public/assets/feed-logo.svg'
-import todoLogo from '../../../public/assets/todo-logo.svg'
+import cronLogo from '../../../../public/assets/cron-logo.svg'
+import eventLogo from '../../../../public/assets/event-logo.svg'
+import feedLogo from '../../../../public/assets/feed-logo.svg'
+import todoLogo from '../../../../public/assets/todo-logo.svg'
 
 export type LogoVariant = 'feed' | 'todo' | 'cron' | 'event'
 
