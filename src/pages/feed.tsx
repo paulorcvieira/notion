@@ -14,7 +14,7 @@ export default function FeedNotion({ posts }: FeedNotionProps) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3000/api/posts')
+  const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/posts`)
   const posts = await response.json()
 
   return {

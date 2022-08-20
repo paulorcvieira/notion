@@ -14,7 +14,7 @@ export default function ToDoNotion({ tasks }: ToDoNotionProps) {
 }
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3000/api/tasks')
+  const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/tasks`)
   const tasks = await response.json()
 
   return {
