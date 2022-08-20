@@ -1,9 +1,12 @@
 import { useRouter } from 'next/router'
 import { lazy, Suspense, useEffect, useMemo } from 'react'
+import GithubCorner from 'react-github-corner'
 
-import { Container, Content } from './styles'
+import { Container, ContainerEvent, Content } from './styles'
 
+import DefaultLayout from 'components/communs/layouts/DefaultLayout'
 import Spinner from 'components/communs/Spinner'
+
 import { useGetLessonsQuery } from 'graphql/generated'
 
 const Sidebar = lazy(() => import('./Sidebar'))
@@ -27,15 +30,40 @@ export default function Event() {
   }, [lesson, error, loading, router, data?.lessons])
 
   return (
-    <Suspense fallback={<Spinner />}>
+    <DefaultLayout
+      title="EventNotion"
+      description="Your next generation Event"
+      logoFileName="event-logo.svg"
+      headerTitle="Event"
+      headerColor="green"
+      headerLogo="event"
+      headerLogoAlt="Logo EventNotion"
+    >
       <Container>
-        <Content>
-          <Video
-            slug={lesson?.slug ? lesson.slug : String(data?.lessons[0].slug)}
-          />
-          <Sidebar loading={loading} error={error} lessons={data?.lessons} />
-        </Content>
+        <Suspense fallback={<Spinner />}>
+          <ContainerEvent>
+            <Content>
+              <Video
+                slug={
+                  lesson?.slug ? lesson.slug : String(data?.lessons[0].slug)
+                }
+              />
+              <Sidebar
+                loading={loading}
+                error={error}
+                lessons={data?.lessons}
+              />
+            </Content>
+          </ContainerEvent>
+        </Suspense>
+
+        <GithubCorner
+          href="https://github.com/paulorcvieira"
+          octoColor="#00875f"
+          bannerColor="#29292e"
+          size={86}
+        />
       </Container>
-    </Suspense>
+    </DefaultLayout>
   )
 }
