@@ -28,13 +28,14 @@ import {
 } from './styles'
 
 import '@vime/core/themes/default.css'
-import { useGetLessonBySlugQuery } from 'graphql/generated'
+import { useGetLessonBySlugQuery } from 'graphql/event/generated/graphql'
+import { withHyGraphApollo } from 'lib/withHyGraphApollo'
 
 interface VideoProps {
-  slug: string
+  slug?: string
 }
 
-export default function Video({ slug }: VideoProps) {
+function Video({ slug }: VideoProps) {
   const { loading, error, data } = useGetLessonBySlugQuery({
     variables: { slug },
   })
@@ -141,3 +142,5 @@ export default function Video({ slug }: VideoProps) {
     </Container>
   )
 }
+
+export default withHyGraphApollo(Video)

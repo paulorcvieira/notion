@@ -1,5 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useCreateSubscriberMutation } from 'graphql/generated'
+import { useCreateSubscriberMutation } from 'graphql/event/generated/graphql'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
@@ -10,6 +10,7 @@ import DefaultLayout from 'components/communs/layouts/DefaultLayout'
 
 import { CalendarCheck } from 'styles/icons'
 
+import { withHyGraphApollo } from 'lib/withHyGraphApollo'
 import {
   Button,
   Container,
@@ -31,7 +32,7 @@ type INewSubscriberFormData = zod.infer<
   typeof newSubscriberFormValidationSchema
 >
 
-export default function Subscribe() {
+function Subscribe() {
   const router = useRouter()
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation()
@@ -149,3 +150,5 @@ export default function Subscribe() {
     </DefaultLayout>
   )
 }
+
+export default withHyGraphApollo(Subscribe)

@@ -4,7 +4,7 @@ import {
   InvalidEvent,
   useCallback,
   useEffect,
-  useMemo
+  useMemo,
 } from 'react'
 import GithubCorner from 'react-github-corner'
 
@@ -20,7 +20,7 @@ import {
   TaskHeader,
   Tasks,
   TasksContent,
-  TasksEmpty
+  TasksEmpty,
 } from './styles'
 
 import { useTasks } from 'hooks/useTasks'

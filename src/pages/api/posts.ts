@@ -17,8 +17,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         <p>👉&nbsp;&nbsp;<a href="#">paulorcvieira/feed-notion</a></p>
         <p>
           <a href="#">#novoprojeto</a>
-          <a href="#">#rocketseat</a>
-          <a href="#">#rocketseat</a>
         </p>
       `,
       draft: false,

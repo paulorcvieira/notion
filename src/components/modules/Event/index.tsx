@@ -7,12 +7,13 @@ import { Container, ContainerEvent, Content } from './styles'
 import DefaultLayout from 'components/communs/layouts/DefaultLayout'
 import Spinner from 'components/communs/Spinner'
 
-import { useGetLessonsQuery } from 'graphql/generated'
+import { useGetLessonsQuery } from 'graphql/event/generated/graphql'
+import { withHyGraphApollo } from 'lib/withHyGraphApollo'
 
 const Sidebar = lazy(() => import('./Sidebar'))
 const Video = lazy(() => import('./Video'))
 
-export default function Event() {
+function Event() {
   const router = useRouter()
 
   const { loading, error, data } = useGetLessonsQuery()
@@ -67,3 +68,5 @@ export default function Event() {
     </DefaultLayout>
   )
 }
+
+export default withHyGraphApollo(Event)

@@ -14,7 +14,7 @@ import {
   ErrorBox,
   ErrorContainer,
   StartCountdownButton,
-  StopCountdownButton
+  StopCountdownButton,
 } from './styles'
 
 import DefaultLayout from 'components/communs/layouts/DefaultLayout'

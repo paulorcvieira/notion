@@ -1,9 +1,9 @@
-schema: https://api-sa-east-1.hygraph.com/v2/cl4t2oypi2sy101zcdoxianty/master
-
-documents: './src/graphql/**/*.graphql'
+overwrite: true
 
 generates:
-  ./src/graphql/generated.ts:
+  ./src/graphql/event/generated/graphql.ts:
+    schema: https://api-sa-east-1.hygraph.com/v2/cl4t2oypi2sy101zcdoxianty/master
+    documents: './src/graphql/event/**/*.graphql'
     plugins:
       - typescript
       - typescript-operations
@@ -13,3 +13,54 @@ generates:
       withHooks: true
       withHOC: false
       withComponent: false
+      exportFragmentSpreadSubTypes: true
+      documentMode: graphQLTag
+
+  ./src/graphql/cm/generated/graphql.ts:
+    schema: 'http://localhost:3333/graphql'
+    documents: './src/graphql/cm/**/*.graphql'
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      reactApolloVersion: 3
+      withHooks: true
+      withHOC: false
+      withComponent: false
+      exportFragmentSpreadSubTypes: true
+      documentMode: graphQLTag
+
+  src/graphql/cm/generated/page.tsx:
+    schema: 'http://localhost:3333/graphql'
+    documents: './src/graphql/cm/private/**/*.graphql'
+    config:
+      documentMode: external
+      importDocumentNodeExternallyFrom: ./graphql
+      reactApolloVersion: 3
+      withHooks: true
+      contextType: 'ApolloClientContext'
+      contextTypeRequired: true
+      apolloClientInstanceImport: '../../../lib/withApollo'
+    preset: import-types
+    presetConfig:
+      typesPath: ./graphql
+    plugins:
+      - 'graphql-codegen-apollo-next-ssr'
+
+  src/graphql/cm/generated/pagePublic.tsx:
+    schema: 'http://localhost:3333/graphql'
+    documents: './src/graphql/cm/public/**/*.graphql'
+    config:
+      documentMode: external
+      importDocumentNodeExternallyFrom: ./graphql
+      reactApolloVersion: 3
+      withHooks: true
+      contextType: 'ApolloClientContext'
+      contextTypeRequired: true
+      apolloClientInstanceImport: '../../../lib/withPublicApollo'
+    preset: import-types
+    presetConfig:
+      typesPath: ./graphql
+    plugins:
+      - 'graphql-codegen-apollo-next-ssr'

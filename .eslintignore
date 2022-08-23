@@ -1,2 +1,3 @@
-src/graphql/generated.ts
+src/graphql/*
 codegen.yml
+codegen-cm.yml
